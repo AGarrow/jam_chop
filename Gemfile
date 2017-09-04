@@ -39,6 +39,10 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'minitest'
+  gem 'minitest-spec-rails'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :development do
@@ -56,3 +60,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "haml-rails", "~> 1.0"
 gem 'carrierwave', '~> 1.0'
 gem 'dotenv'
+gem 'yt', '~> 0.28.0'

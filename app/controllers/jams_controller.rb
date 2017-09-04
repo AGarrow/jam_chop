@@ -49,6 +49,10 @@ class JamsController < ApplicationController
     end
   end
 
+  def fetch_info
+    
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_jam
