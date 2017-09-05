@@ -1,5 +1,4 @@
 class JamsController < ApplicationController
-  before_action :set_jam, only: [:show, :edit, :update, :destroy]
 
   def index
     @jams = Jam.all
@@ -9,7 +8,16 @@ class JamsController < ApplicationController
   end
 
   def new
-    @jam = Jam.new
+    render locals: { jam: Jam.new() } and return unless youtube_url 
+    jam = Jam.new(
+      youtube_url: youtube_url,
+      youtube_id: video.content_id,
+      youtube_title: video.video_title
+      )
+    video&.track_suggestions.each { |t| jam.tracks.build(t) }
+    render locals: {
+      jam: jam || Jam.new(youtube_url),
+    }
   end
 
   def edit
@@ -50,7 +58,7 @@ class JamsController < ApplicationController
   end
 
   def fetch_info
-    
+
   end
 
   private
@@ -61,6 +69,14 @@ class JamsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def jam_params
-      params.fetch(:jam, {})
+      params.require(:jam).permit(:youtube_url, :youtube_title, :youtube_id, tracks_attributes: [:track_number, :start_time, :name, :end_time])
+    end
+
+    def youtube_url
+      params[:jam_params]&.[](:content_url)
+    end
+
+    def video
+      InformationFetcherService.new(youtube_url)
     end
 end

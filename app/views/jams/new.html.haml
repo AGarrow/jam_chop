@@ -1,7 +1,7 @@
 %h1="New Jam"
 
-= render 'url_form'
+= render 'url_form' unless jam.youtube_url
 
-= render 'form', jam: @jam
+= render 'form', jam: jam
 
 = link_to 'Back', jams_path

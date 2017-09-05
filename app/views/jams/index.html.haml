@@ -1,25 +1,22 @@
-<p id="notice"><%= notice %></p>
+%p#notice>= notice
 
-<h1>Jams</h1>
+= form_for(:jam_params, url: new_jam_path, method: :get) do |f|
+  = f.text_field :content_url
+  = f.submit 'Go'
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+%h1
+  Jams
 
-  <tbody>
-    <% @jams.each do |jam| %>
-      <tr>
-        <td><%= link_to 'Show', jam %></td>
-        <td><%= link_to 'Edit', edit_jam_path(jam) %></td>
-        <td><%= link_to 'Destroy', jam, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+%table
+  %thead>
+    %tr>
+      %th
 
-<br>
+  %tbody>
+    - @jams.each do |jam|
+      %tr
+        %td= link_to 'Show', jam
+        %td= link_to 'Edit', edit_jam_path(jam)
+        %td= link_to 'Destroy', jam, method: :delete, data: { confirm: 'Are you sure?' }
 
-<%= link_to 'New Jam', new_jam_path %>
+%br>

@@ -1,0 +1,182 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/videos?id=VlQV2kFXDb8&key=AIzaSyB0bvgESmzz0YwtAjiXgGCG1xGJNP2KCf0&part=snippet
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      User-Agent:
+      - Yt::Request (gzip)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Tue, 05 Sep 2017 00:37:39 GMT
+      Date:
+      - Tue, 05 Sep 2017 00:37:39 GMT
+      Cache-Control:
+      - private, max-age=300, must-revalidate, no-transform
+      Etag:
+      - '"m2yskBQFythfE4irbTIeOgYYfBU/qUuppwgarRuTBlD7OyA1HEcDZWA"'
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '2610'
+      Server:
+      - GSE
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="39,38,37,35"
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "kind": "youtube#videoListResponse",
+         "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/qUuppwgarRuTBlD7OyA1HEcDZWA\"",
+         "pageInfo": {
+          "totalResults": 1,
+          "resultsPerPage": 1
+         },
+         "items": [
+          {
+           "kind": "youtube#video",
+           "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/8z8Ct9bYK6poUH9FmNWM7uMWP50\"",
+           "id": "VlQV2kFXDb8",
+           "snippet": {
+            "publishedAt": "2016-12-13T19:24:46.000Z",
+            "channelId": "UCUHEJCk1pm0j7prEa3H8_CA",
+            "title": "String Cheese Incident - 03/18/16 - Brooklyn Bowl - COMPLETE",
+            "description": "SCI\n03/18/2016\nBrooklyn Bowl\nLas Vegas, NV\nNight 1\n\nSet 1:\nShine 0:54\nRhythm Of the Road 16:10\nCan't Stop Now 32:25\nFarther 39:32\nMLT 45:24\nCould You Be Loved 57:39\nStop Drop Roll 1:07:11\n\nSet 2:\nRosie (Billy Jean) 01:13:33\nWay Back Home 01:25:29\nDon't It Make You Wanna Dance 01:36:13\nSeventh Step 01:48:56\nThe Ocean 01:58:14\nTinder Box 02:06:06\nBlack Clouds 02:20:00\nSoul Shakedown Party 02:25:11\nBlack Clouds 02:28:48\n\nEncore:\nThis Must Be the Place (Naive Melody) 02:37:14",
+            "thumbnails": {
+             "default": {
+              "url": "https://i.ytimg.com/vi/VlQV2kFXDb8/default.jpg",
+              "width": 120,
+              "height": 90
+             },
+             "medium": {
+              "url": "https://i.ytimg.com/vi/VlQV2kFXDb8/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+             },
+             "high": {
+              "url": "https://i.ytimg.com/vi/VlQV2kFXDb8/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+             },
+             "standard": {
+              "url": "https://i.ytimg.com/vi/VlQV2kFXDb8/sddefault.jpg",
+              "width": 640,
+              "height": 480
+             },
+             "maxres": {
+              "url": "https://i.ytimg.com/vi/VlQV2kFXDb8/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+             }
+            },
+            "channelTitle": "whitening9",
+            "tags": [
+             "sci",
+             "string cheese incident",
+             "brooklyn bowl",
+             "2016",
+             "las vegas",
+             "march madness"
+            ],
+            "categoryId": "10",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+             "title": "String Cheese Incident - 03/18/16 - Brooklyn Bowl - COMPLETE",
+             "description": "SCI\n03/18/2016\nBrooklyn Bowl\nLas Vegas, NV\nNight 1\n\nSet 1:\nShine 0:54\nRhythm Of the Road 16:10\nCan't Stop Now 32:25\nFarther 39:32\nMLT 45:24\nCould You Be Loved 57:39\nStop Drop Roll 1:07:11\n\nSet 2:\nRosie (Billy Jean) 01:13:33\nWay Back Home 01:25:29\nDon't It Make You Wanna Dance 01:36:13\nSeventh Step 01:48:56\nThe Ocean 01:58:14\nTinder Box 02:06:06\nBlack Clouds 02:20:00\nSoul Shakedown Party 02:25:11\nBlack Clouds 02:28:48\n\nEncore:\nThis Must Be the Place (Naive Melody) 02:37:14"
+            }
+           }
+          }
+         ]
+        }
+    http_version: 
+  recorded_at: Tue, 05 Sep 2017 00:37:39 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/videos?id=VlQV2kFXDb8&key=AIzaSyB0bvgESmzz0YwtAjiXgGCG1xGJNP2KCf0&maxResults=50&part=contentDetails
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      User-Agent:
+      - Yt::Request (gzip)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Tue, 05 Sep 2017 00:37:39 GMT
+      Date:
+      - Tue, 05 Sep 2017 00:37:39 GMT
+      Cache-Control:
+      - private, max-age=300, must-revalidate, no-transform
+      Etag:
+      - '"m2yskBQFythfE4irbTIeOgYYfBU/nUNWaKMzkjYzcwHujHVBWWtjew8"'
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '516'
+      Server:
+      - GSE
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="39,38,37,35"
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "kind": "youtube#videoListResponse",
+         "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/nUNWaKMzkjYzcwHujHVBWWtjew8\"",
+         "pageInfo": {
+          "totalResults": 1,
+          "resultsPerPage": 1
+         },
+         "items": [
+          {
+           "kind": "youtube#video",
+           "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/B6xETExwK45bLBfvCqGEVaeW6Z4\"",
+           "id": "VlQV2kFXDb8",
+           "contentDetails": {
+            "duration": "PT2H45M48S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "projection": "rectangular"
+           }
+          }
+         ]
+        }
+    http_version: 
+  recorded_at: Tue, 05 Sep 2017 00:37:40 GMT
+recorded_with: VCR 3.0.3
