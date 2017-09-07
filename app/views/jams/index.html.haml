@@ -6,17 +6,17 @@
 
 %h1
   Jams
+  %table
+    %thead>
+      %tr>
+        %th
 
-%table
-  %thead>
-    %tr>
-      %th
-
-  %tbody>
-    - @jams.each do |jam|
-      %tr
-        %td= link_to 'Show', jam
-        %td= link_to 'Edit', edit_jam_path(jam)
-        %td= link_to 'Destroy', jam, method: :delete, data: { confirm: 'Are you sure?' }
+    %tbody>
+      - jams.each do |jam|
+        %tr
+          %td= jam.youtube_title
+          %td= link_to 'Show', jam
+          %td= link_to 'Edit', edit_jam_path(jam)
+          %td= link_to 'Destroy', jam, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br>

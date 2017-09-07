@@ -61,3 +61,4 @@ gem "haml-rails", "~> 1.0"
 gem 'carrierwave', '~> 1.0'
 gem 'dotenv'
 gem 'yt', '~> 0.28.0'
+gem 'bootstrap-sass', '~> 3.3.6'
