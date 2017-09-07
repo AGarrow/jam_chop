@@ -1,11 +1,12 @@
 %p#notice>= notice
 
 = form_for(:jam_params, url: new_jam_path, method: :get) do |f|
-  = f.text_field :content_url
-  = f.submit 'Go'
+  .input-group.input-group-lg
+    = f.text_field :content_url, { class: "form-control" }
+    = f.submit  'Go', class: 'input-group-addon'
 
 %h1
-  Jams
+  Other Jams
   %table
     %thead>
       %tr>

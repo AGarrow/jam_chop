@@ -1,10 +1,10 @@
 %html
   %head
-    #title="JamChop"
     = csrf_meta_tags
 
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     = render partial: 'shared/header'
-    = yield
+    .col-md-8.col-md-offset-2{align: "center"}
+      = yield
