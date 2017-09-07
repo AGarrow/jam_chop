@@ -1,10 +1,10 @@
 %p#notice>= notice
 
 = form_for(:jam_params, url: new_jam_path, method: :get) do |f|
-  .input-group.input-group-lg
-    = f.text_field :content_url, { class: "form-control" }
-    = f.submit  'Go', class: 'input-group-addon'
-
+  .input-group
+    = f.text_field :content_url, { class: "form-control", placeholder: "e.g.: https://www.youtube.com/watch?v=VlQV2kFXDb8&t=1968s"}
+    .input-group-btn
+      = f.button 'Go', type: :submit, class: 'btn btn-success'
 %h1
   Other Jams
   %table
