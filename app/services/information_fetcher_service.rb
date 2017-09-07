@@ -1,9 +1,10 @@
+class InvalidURLError < StandardError ; end
 class InformationFetcherService
 	attr_accessor :video, :youtube_url
 	
 	def initialize(youtube_url)
 		@youtube_url = youtube_url
-		return unless content_id
+		raise InvalidURLError unless content_id
 		@video = Yt::Video.new id: content_id
 	end
 
@@ -16,10 +17,14 @@ class InformationFetcherService
 	end
 
 	def track_suggestions
-		parse_text(video.description)
+		parse_text(video.description) || default_track_suggestion
 	end
 
 	private
+
+		def default_track_suggestion
+			[{ start_time: "00:00", name: video_title, end_time: end_time, track_number: 1 }]
+		end
 
 		def parse_text(text)
 			time_regex = /\[?(\d{1,2}:\d{1,2}(?::\d{1,2})?)\]?/

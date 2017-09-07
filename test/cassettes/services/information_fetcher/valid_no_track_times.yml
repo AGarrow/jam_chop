@@ -1,0 +1,168 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/videos?id=dJtYi8BWJZU&key=AIzaSyB0bvgESmzz0YwtAjiXgGCG1xGJNP2KCf0&part=snippet
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      User-Agent:
+      - Yt::Request (gzip)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Thu, 07 Sep 2017 00:54:53 GMT
+      Date:
+      - Thu, 07 Sep 2017 00:54:53 GMT
+      Cache-Control:
+      - private, max-age=300, must-revalidate, no-transform
+      Etag:
+      - '"m2yskBQFythfE4irbTIeOgYYfBU/WnVniV9MABJ_7dIbR6VbLn4xLEE"'
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '1303'
+      Server:
+      - GSE
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="39,38,37,35"
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "kind": "youtube#videoListResponse",
+         "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/WnVniV9MABJ_7dIbR6VbLn4xLEE\"",
+         "pageInfo": {
+          "totalResults": 1,
+          "resultsPerPage": 1
+         },
+         "items": [
+          {
+           "kind": "youtube#video",
+           "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/qKEJ2byopxzDLMmJfTMom75W2bQ\"",
+           "id": "dJtYi8BWJZU",
+           "snippet": {
+            "publishedAt": "2016-03-28T03:28:16.000Z",
+            "channelId": "UCD-UQJyGrqc0YpYKx6O-AvQ",
+            "title": "String Cheese Incident - Electric Forest Festival - 2011-07-02",
+            "description": "",
+            "thumbnails": {
+             "default": {
+              "url": "https://i.ytimg.com/vi/dJtYi8BWJZU/default.jpg",
+              "width": 120,
+              "height": 90
+             },
+             "medium": {
+              "url": "https://i.ytimg.com/vi/dJtYi8BWJZU/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+             },
+             "high": {
+              "url": "https://i.ytimg.com/vi/dJtYi8BWJZU/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+             },
+             "standard": {
+              "url": "https://i.ytimg.com/vi/dJtYi8BWJZU/sddefault.jpg",
+              "width": 640,
+              "height": 480
+             }
+            },
+            "channelTitle": "marble5",
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "localized": {
+             "title": "String Cheese Incident - Electric Forest Festival - 2011-07-02",
+             "description": ""
+            }
+           }
+          }
+         ]
+        }
+    http_version: 
+  recorded_at: Thu, 07 Sep 2017 00:54:53 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/videos?id=dJtYi8BWJZU&key=AIzaSyB0bvgESmzz0YwtAjiXgGCG1xGJNP2KCf0&maxResults=50&part=contentDetails
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      User-Agent:
+      - Yt::Request (gzip)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Thu, 07 Sep 2017 00:54:53 GMT
+      Date:
+      - Thu, 07 Sep 2017 00:54:53 GMT
+      Cache-Control:
+      - private, max-age=300, must-revalidate, no-transform
+      Etag:
+      - '"m2yskBQFythfE4irbTIeOgYYfBU/F1u4qQ6YFwvgueiL0np-hN1Zsto"'
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '515'
+      Server:
+      - GSE
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="39,38,37,35"
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "kind": "youtube#videoListResponse",
+         "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/F1u4qQ6YFwvgueiL0np-hN1Zsto\"",
+         "pageInfo": {
+          "totalResults": 1,
+          "resultsPerPage": 1
+         },
+         "items": [
+          {
+           "kind": "youtube#video",
+           "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/hUftBUwQxTMv68fQknmM-J-hIo4\"",
+           "id": "dJtYi8BWJZU",
+           "contentDetails": {
+            "duration": "PT2H33M3S",
+            "dimension": "2d",
+            "definition": "sd",
+            "caption": "false",
+            "licensedContent": false,
+            "projection": "rectangular"
+           }
+          }
+         ]
+        }
+    http_version: 
+  recorded_at: Thu, 07 Sep 2017 00:54:53 GMT
+recorded_with: VCR 3.0.3
