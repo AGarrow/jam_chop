@@ -1,3 +1,3 @@
 class Track < ApplicationRecord
-	belongs_to :jam
+	default_scope { where(download: true) }
 end

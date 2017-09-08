@@ -23,7 +23,7 @@
     = f.fields_for :tracks do |tracks_form|
       %tr
         %td.download
-          = check_box_tag "jam[tracks_attributes][][end_time]", true, true
+          = tracks_form.check_box :download
         %td.track-no
           = tracks_form.text_field :track_number
         %td.time-field
