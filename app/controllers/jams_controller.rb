@@ -5,6 +5,7 @@ class JamsController < ApplicationController
   end
 
   def show
+    render locals: { jam: jam }
   end
 
   def new
@@ -63,8 +64,8 @@ class JamsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_jam
-      @jam = Jam.find(params[:id])
+    def jam
+      @jam ||= Jam.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

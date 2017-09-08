@@ -1,0 +1,13 @@
+%p#notice= notice
+
+%h4=jam.youtube_title
+%table.table
+	-jam.tracks.each do |t|
+		%tr
+			%td=t.track_number
+			%td=t.start_time
+			%td=t.end_time
+			%td=t.name
+
+= link_to 'Edit', edit_jam_path(jam)
+= link_to 'Back', jams_path

@@ -12,14 +12,6 @@
 
   = f.text_field :youtube_title
   %table.table
-    %thead
-      %th
-        %span.glyphicon.glyphicon-download
-      %th="#"
-      %th="Start"
-      %th="End"
-      %th="Title"
-
     = f.fields_for :tracks do |tracks_form|
       %tr
         %td.download
