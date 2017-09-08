@@ -10,21 +10,27 @@
         - jam.errors.full_messages.each do |message|
           %li=message
 
-  = f.label :title
   = f.text_field :youtube_title
-  %ul
+  %table.table
+    %thead
+      %th
+        %span.glyphicon.glyphicon-download
+      %th="#"
+      %th="Start"
+      %th="End"
+      %th="Title"
+
     = f.fields_for :tracks do |tracks_form|
-      %li
-        = tracks_form.label :number
-        = tracks_form.text_field :track_number
-
-        = tracks_form.label :start_time
-        = tracks_form.text_field :start_time
-
-        = tracks_form.label :name
-        = tracks_form.text_field :name
-
-        = tracks_form.label :end_time
-        = tracks_form.text_field :end_time
+      %tr
+        %td.download
+          = check_box_tag "jam[tracks_attributes][][end_time]", true, true
+        %td.track-no
+          = tracks_form.text_field :track_number
+        %td.time-field
+          = tracks_form.text_field :start_time
+        %td.time-field
+          = tracks_form.text_field :end_time
+        %td.name-field
+          = tracks_form.text_field :name
   .actions
     = f.submit

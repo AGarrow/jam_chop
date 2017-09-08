@@ -3,5 +3,52 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body { 
-	background-color: #222222;
+	background-color: #222;
+}
+
+
+h1 { 
+	color: #9d9d9d;
+}
+
+h3 {
+	color: white;
+}
+
+.url-form{
+	margin-top: 20%;
+}
+
+.track-no {
+	width: 50px;
+}
+
+.time-field {
+	width: 100px;
+}
+
+input {
+	width: 80%;
+	border: none;
+	border-color: transparent;
+	background-color: #222;
+	color: #9d9d9d;
+}
+
+th {
+	color: #9d9d9d;	
+}
+
+td {
+	white-space:nowrap;
+}
+
+table {
+	background-color: #222;
+	border: none;
+	border-color: #9d9d9d;	
+}
+
+.table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
+	border-top: none;
 }
