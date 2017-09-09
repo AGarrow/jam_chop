@@ -13,7 +13,7 @@ class JamsController < ApplicationController
     jam = Jam.new(
       youtube_url: youtube_url,
       youtube_id: video.content_id,
-      youtube_title: video.video_title
+      youtube_title: video.title
       )
     video&.track_suggestions.each { |t| jam.tracks.build(t) }
     render locals: {
@@ -78,6 +78,6 @@ class JamsController < ApplicationController
     end
 
     def video
-      InformationFetcherService.new(youtube_url)
+      Video.new(youtube_url)
     end
 end
