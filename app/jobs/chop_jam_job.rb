@@ -18,7 +18,7 @@ class ChopJamJob < ActiveJob::Base
 			end
 
 			def download(jam)
-				system "youtube-dl -o #{jam.youtube_dl_path} -x --audio-format 'wav' \"https://www.youtube.com/watch?v=2IRcM9qwDwo\""
+				system "youtube-dl -o #{jam.youtube_dl_path} -x --audio-format 'wav' \"#{jam.youtube_url}\""
 			end
 
 			def tar(jam)

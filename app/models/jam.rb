@@ -16,18 +16,23 @@ class Jam < ApplicationRecord
 		@cover_image_remote_url = url_value
 	end
 
+	def download_root_path
+		File.join(Constants::DOWNLOAD_DIR, id.to_s)
+	end
+
 	def download_dir_path
-		"#{Constants::DOWNLOAD_DIR}/#{youtube_id}/#{youtube_title}"
+		File.join(download_root_path, id.to_s)
 	end
 
 	def tar_path
-		"#{download_dir_path.split("/")[0..-2].join("/")}/#{youtube_title}.tar.gz"
+		File.join(download_root_path, "#{youtube_title}.tar.gz")
 	end
+
 	def youtube_dl_path
-		"\"#{download_dir_path}/#{youtube_title}.\%\%(ext)\""
+		"\"#{download_dir_path}/#{id}.\%\%(ext)\""
 	end
 
 	def raw_audio_path
-		"#{download_dir_path}/#{youtube_title}.wav"
+		File.join(download_dir_path, "#{id}.wav")
 	end
 end
