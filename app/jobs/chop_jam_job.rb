@@ -6,6 +6,7 @@ class ChopJamJob < ActiveJob::Base
 		chop(jam)
 		tar(jam)
 		upload(jam)
+		cleanup(jam)
 	end
 
 	private
@@ -16,6 +17,11 @@ class ChopJamJob < ActiveJob::Base
 				system "ffmpeg -i #{jam.raw_audio_path} -ss #{track.start_time} -to #{track.end_time} -c copy \"#{track.track_path}\""
 			end
 			FileUtils.rm(jam.raw_audio_path)
+		end
+
+		def cleanup(jam)
+			jam.update_attributes(uploaded_at: Time.zone.now, upload_deleted_at: nil)
+			FileUtils.rm_rf(jam.download_root_path)
 		end
 
 		def download(jam)
