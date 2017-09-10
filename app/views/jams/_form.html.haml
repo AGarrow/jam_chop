@@ -1,16 +1,21 @@
+- if jam.errors.any?
+  #error_explanation
+    %h2 
+      "pluralize(jam.errors.count, "error") prohibited this jam from being saved:"
+
+    %ul
+      - jam.errors.full_messages.each do |message|
+        %li=message
+
+
 = form_with(model: jam, local: true) do |f|
   = f.hidden_field :youtube_url
   = f.hidden_field :youtube_id
-  - if jam.errors.any?
-    #error_explanation
-      %h2 
-        "pluralize(jam.errors.count, "error") prohibited this jam from being saved:"
-
-      %ul
-        - jam.errors.full_messages.each do |message|
-          %li=message
-
-  = f.text_field :youtube_title
+  .row
+    = image_tag jam.cover_image_remote_url, class: "pull-left"
+    = f.hidden_field :cover_image_remote_url
+    .album-meta
+      = f.text_field :youtube_title
   %table.table
     = f.fields_for :tracks do |tracks_form|
       %tr

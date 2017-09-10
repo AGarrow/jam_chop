@@ -1,6 +1,9 @@
 %p#notice= notice
 
-%h4=jam.youtube_title
+.row
+	= image_tag jam.cover_image, class: "pull-left"
+	.album-meta
+		%p= jam.youtube_title
 %table.table
 	-jam.tracks.each do |t|
 		%tr

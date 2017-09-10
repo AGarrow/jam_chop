@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170908024311) do
+ActiveRecord::Schema.define(version: 20170909202756) do
 
   create_table "jams", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -18,6 +18,10 @@ ActiveRecord::Schema.define(version: 20170908024311) do
     t.string "youtube_id"
     t.string "youtube_url"
     t.string "youtube_title"
+    t.string "cover_image_file_name"
+    t.string "cover_image_content_type"
+    t.integer "cover_image_file_size"
+    t.datetime "cover_image_updated_at"
   end
 
   create_table "tracks", force: :cascade do |t|

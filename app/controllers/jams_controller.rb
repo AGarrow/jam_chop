@@ -13,9 +13,10 @@ class JamsController < ApplicationController
     jam = Jam.new(
       youtube_url: youtube_url,
       youtube_id: video.content_id,
-      youtube_title: video.title
+      youtube_title: video.title,
       )
-    video&.track_suggestions.each { |t| jam.tracks.build(t) }
+    jam.cover_image_remote_url = video.thumbnail_url(size = :medium)
+    video.track_suggestions.each { |t| jam.tracks.build(t) }
     render locals: {
       jam: jam || Jam.new(youtube_url),
     }
@@ -25,15 +26,16 @@ class JamsController < ApplicationController
   end
 
   def create
-    @jam = Jam.new(jam_params)
+    jam = Jam.new(jam_params)
+    jam.cover_image_remote_url = jam_params[:cover_image_remote_url]
 
     respond_to do |format|
-      if @jam.save
-        format.html { redirect_to @jam, notice: 'Jam was successfully created.' }
-        format.json { render :show, status: :created, location: @jam }
+      if jam.save
+        format.html { redirect_to jam, notice: 'Jam was successfully created.' }
+        format.json { render :show, status: :created, location: jam }
       else
         format.html { render :new }
-        format.json { render json: @jam.errors, status: :unprocessable_entity }
+        format.json { render json: jam.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -70,7 +72,7 @@ class JamsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def jam_params
-      params.require(:jam).permit(:youtube_url, :youtube_title, :youtube_id, tracks_attributes: [:track_number, :start_time, :name, :end_time])
+      params.require(:jam).permit(:cover_image_remote_url, :youtube_url, :youtube_title, :youtube_id, tracks_attributes: [:track_number, :start_time, :name, :end_time])
     end
 
     def youtube_url
@@ -78,6 +80,6 @@ class JamsController < ApplicationController
     end
 
     def video
-      Video.new(youtube_url)
+      @_video ||= Video.new(youtube_url)
     end
 end
