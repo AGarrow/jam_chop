@@ -3,7 +3,8 @@
 .row
 	= image_tag jam.cover_image, class: "pull-left"
 	.album-meta
-		%p= jam.youtube_title
+		%h5= jam.youtube_title
+%hr
 %table.table
 	-jam.tracks.each do |t|
 		%tr
