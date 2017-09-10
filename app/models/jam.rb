@@ -9,6 +9,8 @@ class Jam < ApplicationRecord
 	validates :youtube_url, format: { with: /(https:)?(\/\/www\.)?youtube\.com\/watch\?v=\w+/, message: 'Please enter a valid youtube url'}
 	validates :youtube_url, :youtube_id, :youtube_title, presence: true
 
+	mount_uploader :jam_zip_upload, JamUploader
+
 	def cover_image_remote_url=(url_value)
 		self.cover_image = URI.parse(url_value)
 		@cover_image_remote_url = url_value

@@ -4,12 +4,10 @@ class ChopJamJob < ActiveJob::Base
 			download(jam)
 			chop(jam)
 			tar(jam)
+			upload(jam)
 		end
 
 		private
-			def download(jam)
-				system "youtube-dl -o #{jam.youtube_dl_path} -x --audio-format 'wav' \"https://www.youtube.com/watch?v=2IRcM9qwDwo\""
-			end
 
 			def chop(jam)
 				return unless jam.tracks.any?
@@ -19,9 +17,17 @@ class ChopJamJob < ActiveJob::Base
 				FileUtils.rm(jam.raw_audio_path)
 			end
 
+			def download(jam)
+				system "youtube-dl -o #{jam.youtube_dl_path} -x --audio-format 'wav' \"https://www.youtube.com/watch?v=2IRcM9qwDwo\""
+			end
+
 			def tar(jam)
 				system "tar -zcvf #{jam.tar_path} #{jam.download_dir_path}"
 				FileUtils.rm_rf(jam.download_dir_path)
+			end
+
+			def upload(jam)
+				File.open(jam.tar_path) { |f| u.jam_zip_upload }
 			end
 	end
 end

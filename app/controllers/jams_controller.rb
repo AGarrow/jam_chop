@@ -31,6 +31,7 @@ class JamsController < ApplicationController
 
     respond_to do |format|
       if jam.save
+        ChopJamJob.chop_jam(jam).perform_later
         format.html { redirect_to jam, notice: 'Jam was successfully created.' }
         format.json { render :show, status: :created, location: jam }
       else
