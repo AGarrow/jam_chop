@@ -13,5 +13,9 @@
 			%td=t.end_time
 			%td=t.name
 
-= link_to 'Edit', edit_jam_path(jam)
-= link_to 'Back', jams_path
+- if jam.jam_zip_upload.url
+	%a{ href: jam.jam_zip_upload.url }='Download'
+- else
+	%p
+		Processing, this may take a while.
+

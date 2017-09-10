@@ -25,7 +25,7 @@ class Jam < ApplicationRecord
 	end
 
 	def tar_path
-		File.join(download_root_path, "#{youtube_title}.tar.gz")
+		File.join(download_root_path, "#{PathSanitizer.sanitize(youtube_title)}.tar.gz")
 	end
 
 	def youtube_dl_path

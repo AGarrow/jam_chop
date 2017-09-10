@@ -31,7 +31,7 @@ class JamsController < ApplicationController
 
     respond_to do |format|
       if jam.save
-        ChopJamJob.chop_jam(jam).perform_later
+        ChopJamJob.perform_later(jam)
         format.html { redirect_to jam, notice: 'Jam was successfully created.' }
         format.json { render :show, status: :created, location: jam }
       else
@@ -61,14 +61,10 @@ class JamsController < ApplicationController
     end
   end
 
-  def fetch_info
-
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def jam
-      @jam ||= Jam.find(params[:id])
+      @_jam ||= Jam.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
