@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170910001416) do
+ActiveRecord::Schema.define(version: 20170910152045) do
 
   create_table "jams", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20170910001416) do
     t.integer "cover_image_file_size"
     t.datetime "cover_image_updated_at"
     t.string "artist"
+    t.string "jam_zip_upload"
   end
 
   create_table "tracks", force: :cascade do |t|
