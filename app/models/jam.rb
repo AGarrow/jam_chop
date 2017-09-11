@@ -3,6 +3,8 @@ class Jam < ApplicationRecord
 	attr_reader :cover_image_remote_url
 	validates_attachment_content_type :cover_image, content_type: /\Aimage\/.*\z/
 
+	enum  status: [ :downloading, :chopping, :compressing, :uploading, :cleaning_up, :done, :deleted, :error ]
+
 	has_many :tracks
 	accepts_nested_attributes_for :tracks
 

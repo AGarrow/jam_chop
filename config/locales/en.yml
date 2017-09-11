@@ -30,4 +30,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  statuses:
+    downloading: "downloading your video to our server..."
+    chopping: "chopping audio into byte sized bits (heh)"
+    compressing: "compressing album"
+    uploading: "creating your download file"
+    cleaning_up: "cleaning up"
+    error: "sorry! something went wrong."

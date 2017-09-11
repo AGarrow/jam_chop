@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
+	mount ActionCable.server => '/cable'
+
   resources :jams
-  get :fetch_info, to: :fetch_info, controller: :jams
   root to: "jams#new"
 end

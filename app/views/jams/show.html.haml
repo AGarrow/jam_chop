@@ -13,9 +13,10 @@
 			%td=t.end_time
 			%td=t.name
 
-- if jam.jam_zip_upload.url
-	%a{ href: jam.jam_zip_upload.url }='Download'
-- else
-	%p
-		Processing, this may take a while.
-
+#status-container
+	- if jam.jam_zip_upload.url
+		%a{ href: jam.jam_zip_upload.url }='Download'
+	- else
+		#status-display{ data: { jam_id: jam.id } }
+			= svg 'loading'
+			%p=I18n.t("statuses.#{jam.status}")

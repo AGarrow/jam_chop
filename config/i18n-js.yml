@@ -1,0 +1,4 @@
+fallbacks: :en
+
+translations:
+  - file: 'app/assets/javascripts/%{locale}.js'

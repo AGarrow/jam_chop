@@ -2,11 +2,22 @@ class ChopJamJob < ActiveJob::Base
 	queue_as :default
 
 	def perform(jam)
+		update_status(jam, status: :downloading)
 		download(jam)
+		
+		update_status(jam, status: :chopping)
 		chop(jam)
+		
+		update_status(jam, status: :compressing)
 		tar(jam)
+		
+		update_status(jam, status: :uploading)
 		upload(jam)
+		
+		update_status(jam, status: :cleaning_up)
 		cleanup(jam)
+		
+		update_status(jam, status: :done)
 	end
 
 	private
@@ -31,6 +42,12 @@ class ChopJamJob < ActiveJob::Base
 		def tar(jam)
 			system "tar -zcvf #{jam.tar_path} #{jam.download_dir_path}"
 			FileUtils.rm_rf(jam.download_dir_path)
+		end
+
+		def update_status(jam, status:)
+			stream = "status_#{jam.id}"
+			jam.update_attributes(status: Jam.statuses[status])
+			ActionCable.server.broadcast(stream, status: status, download_url: jam.jam_zip_upload.url )
 		end
 
 		def upload(jam)
