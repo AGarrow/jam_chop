@@ -67,3 +67,5 @@ gem 'paperclip', '~> 5.0.0'
 gem 'carrierwave-aws'
 gem 'jquery-rails'
 gem 'i18n-js'
+
+ruby "2.4.1"
