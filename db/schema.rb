@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170910232646) do
+ActiveRecord::Schema.define(version: 20170912001053) do
 
   create_table "jams", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20170910232646) do
     t.datetime "uploaded_at"
     t.datetime "upload_deleted_at"
     t.integer "status"
+    t.integer "audio_format", default: 0
   end
 
   create_table "tracks", force: :cascade do |t|

@@ -32,8 +32,9 @@
 en:
   statuses:
     downloading: "downloading your video to our server..."
-    chopping: "chopping audio into byte sized bits (heh)"
-    compressing: "compressing album"
-    uploading: "creating your download file"
-    cleaning_up: "cleaning up"
+    chopping: "chopping audio into byte sized bits (heh)..."
+    compressing: "compressing album..."
+    converting: "converting to mp3..."
+    uploading: "creating your download file..."
+    cleaning_up: "cleaning up..."
     error: "sorry! something went wrong."

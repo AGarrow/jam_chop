@@ -4,7 +4,7 @@ class Jam < ApplicationRecord
 	validates_attachment_content_type :cover_image, content_type: /\Aimage\/.*\z/
 
 	enum  status: [ :downloading, :chopping, :compressing, :uploading, :cleaning_up, :done, :deleted, :error ]
-
+	enum	audio_format: [ :mp3, :wav ]
 	has_many :tracks
 	accepts_nested_attributes_for :tracks
 
