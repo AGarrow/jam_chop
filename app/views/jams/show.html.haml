@@ -19,4 +19,4 @@
 	- else
 		#status-display{ data: { jam_id: jam.id } }
 			= svg 'loading'
-			%p=I18n.t("statuses.#{jam.status}")
+			%p=I18n.t("statuses.#{jam.status.presence || 'queued'}")

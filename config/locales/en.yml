@@ -38,3 +38,4 @@ en:
     uploading: "creating your download file..."
     cleaning_up: "cleaning up..."
     error: "sorry! something went wrong."
+    queued: "your album is queued for processing"

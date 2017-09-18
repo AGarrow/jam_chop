@@ -2,6 +2,7 @@ class ChopJamJob < ActiveJob::Base
 	queue_as :default
 
 	def perform(jam)
+		FileUtils::mkdir_p jam.download_dir_path
 		update_status(jam, status: :downloading)
 		download(jam)
 		

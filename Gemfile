@@ -54,6 +54,12 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+group :production do
+  gem 'pg'
+  gem 'redis', '~> 3.3'
+  gem 'aws-sdk', '~> 2.3'
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
@@ -68,5 +74,4 @@ gem 'jquery-rails'
 gem 'i18n-js'
 gem 'ruby-mp3info'
   
-
 ruby "2.4.1"

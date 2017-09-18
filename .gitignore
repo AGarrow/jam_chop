@@ -11,11 +11,12 @@
 /db/*.sqlite3
 /db/*.sqlite3-journal
 
+public/assets/**
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
 
-tmp/
 log/
 
 .DS_Store

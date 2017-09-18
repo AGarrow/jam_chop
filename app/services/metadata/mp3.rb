@@ -3,7 +3,6 @@ module Metadata
 	module Mp3
 		class << self
 			def apply(jam)
-				cover_image = File.new(jam.cover_image.path, 'rb')
 				jam.tracks.each do |t|
 					Rails.logger.debug(t.track_path)
 					Mp3Info.open(t.track_path) do |f|
@@ -11,7 +10,7 @@ module Metadata
 						f.tag.title = t.name
 						f.tag.album = jam.youtube_title
 						f.tag.artist = jam.artist
-						f.tag2.add_picture(cover_image.read)
+						f.tag2.add_picture(Paperclip.io_adapters.for(jam.cover_image).read)					
 					end
 				end
 			end
