@@ -22,3 +22,15 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+depends on:
+
+youtube-dl
+ffmpeg
+imagemagick
+
+
+to do:
+- fix tar filepath problem
+-

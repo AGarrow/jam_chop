@@ -1,4 +1,20 @@
 $(document).ready(function(){
+	$("#add-track").click(function(){
+		var $lastTrack = $("#tracks-table > tbody > :last");
+		var $newRow = $lastTrack.clone().html($lastTrack.html().replace(/\[[0-9]{1,2}\]/g, "["+String($("tr").length)+"]"));
+		$("#tracks-table").append($newRow);
+		updateTrackNumbers();
+		updateRemoveButton();
+	});
+
+	$("button.remove-track").click(function(e){
+		e.preventDefault();
+		$(this).closest("tr").remove();
+		updateTrackNumbers();
+		updateRemoveButton();
+	});
+
+	$("input[type='checkbox']").click(function(){updateTrackNumbers();});
 	if ($("#status-display").length > 0) {
 		displayStatus()
 	}
@@ -28,3 +44,20 @@ function displayStatus(){
 		}
 	})
 }
+
+function updateTrackNumbers(){
+	$(".download input:checked").each(function( index ){
+		$(this).parent().siblings(".track-no").find("input").val(String(index + 1))
+	});
+}
+
+function updateRemoveButton(){
+	if($("tr").length > 1) {
+		$(".remove-track").show();
+	}
+	else{
+		$(".remove-track").hide();
+	}
+}
+
+
