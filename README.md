@@ -42,5 +42,4 @@ In development environments all converted mp3 albums are stored on the local fil
 * clean up frontend
 * email notifications
 * get coverage reports
-
-
+* exception handling
