@@ -2,6 +2,7 @@
   "name": "jam_chop",
   "description": "",
   "scripts": {
+    "postdeploy": "rails db:migrate"
   },
   "env": {
     "AWS_ACCESS_KEY_ID": {
