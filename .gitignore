@@ -30,3 +30,4 @@ log/
 .byebug_history
 .env
 public/system/*
+public/uploads/
