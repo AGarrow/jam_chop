@@ -3,7 +3,7 @@
 JamChop is a site that allows users to create custom mp3 albums from youtube videos. Users enter a youtube video URL in the search bar, recieve a list of track suggestions if they exist in the description, can edit track start times/orders/titles, and download a zipped up file containing the album.
 
 
-##Contributing
+## Contributing
 
 To contribute to this project please fork the repository and create a pull request once you have made your changes. Pull request will automatically gnenerate heroku feature environments, which can be viewed at https://jam-chop-staging-pr-[PR_NUMBER].herokuapp.com .
 
@@ -37,11 +37,14 @@ Once the above dependencies have been installed, this is a straightforward rails
 In development environments all converted mp3 albums are stored on the local filesytem in `public/uploads`, and in staging and production they are uploaded to aws s3 buckets. Staging and production servers run `rails uploads:delete` every hour to clear up stale albums, but your local machine won't do that, so make sure to clear up that folder once in a while.
 
 ## TODO
+
+### Necessities
 * write tests and setup CI
 * user input validation
-* proper separation of environments
-* worker heroku dynos using sidekiq
-* clean up frontend
-* email notifications
-* get coverage reports
 * exception handling
+
+### Features
+* clean up frontend
+* accurate progress bar
+* upload album art
+* email notifications
