@@ -101,4 +101,6 @@ Rails.application.configure do
       s3_region: ENV.fetch('AWS_REGION'),
     }
   }
+
+  config.active_job.queue_adapter = :sidekiq
 end
