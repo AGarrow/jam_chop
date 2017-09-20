@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/AGarrow/jam_chop/tree/master.svg?style=shield)](https://circleci.com/gh/AGarrow/jam_chop/tree/master)
+
 # JamChop
 
 JamChop is a site that allows users to create custom mp3 albums from youtube videos. Users enter a youtube video URL in the search bar, recieve a list of track suggestions if they exist in the description, can edit track start times/orders/titles, and download a zipped up file containing the album.
