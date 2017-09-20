@@ -5,7 +5,7 @@ JamChop is a site that allows users to create custom mp3 albums from youtube vid
 
 ##Contributing
 
-To contribute to this project please fork the repository and create a pull request once you have made your changes. Pull request will automatically gnenerate heroku feature environments, which can be viewed at https://jam-chop-pr-[PR_NUMBER].herokuapp.com .
+To contribute to this project please fork the repository and create a pull request once you have made your changes. Pull request will automatically gnenerate heroku feature environments, which can be viewed at https://jam-chop-staging-pr-[PR_NUMBER].herokuapp.com .
 
 ### Getting Started
 
@@ -17,6 +17,8 @@ This is a fairly simple rails app that is very much a work in progress.
 * [ffmpeg](https://www.ffmpeg.org/)
 * [imagemagick](https://www.imagemagick.org/script/index.php)
 * ruby 2.4.1
+
+__please note:__ youtube-dl and ffmpeg are only necessary if you plan on actually downloading and converting videos. If you plan on doing front end work these aren't necessary.
 
 #### setting up
 
