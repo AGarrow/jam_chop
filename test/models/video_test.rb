@@ -29,12 +29,4 @@ class VideoTest <  ActiveSupport::TestCase
 			end			
 		end
 	end
-
-	describe "initialize" do
-		it "should return nil for an invalid url" do
-			assert_raises InvalidURLError do
-				Video.new('https://www.youtube.com/watch?ddfdfdfd')
-			end
-		end
-	end
 end

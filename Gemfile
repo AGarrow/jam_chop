@@ -43,6 +43,7 @@ group :development, :test do
   gem 'minitest-spec-rails'
   gem 'vcr'
   gem 'webmock'
+  gem 'mocha'
 end
 
 group :development do
