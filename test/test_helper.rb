@@ -21,6 +21,10 @@ class ActiveSupport::TestCase
     SimpleCov.coverage_dir(dir)
   end
 
-  SimpleCov.start
-  SimpleCov.formatter = SimpleCov::Formatter::ShieldFormatter
+  SimpleCov.start 'rails'
+  SimpleCov.formatter = SimpleCov::Formatter::ShieldFormatter unless ENV['CIRCLE_CI']
+
+  def sample_cover(filename: "cover_image.jpg")
+    File.new("test/fixtures/files/#{filename}")
+  end
 end

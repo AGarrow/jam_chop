@@ -1,13 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+nickelback_one:
   name: MyString
-  start_time: MyString
-  end_time: MyString
-  jam_id: 1
+  start_time: "00:00"
+  end_time: "00:03"
+  track_number: 1
+  jam_id: 42
 
-two:
-  name: MyString
-  start_time: MyString
-  end_time: MyString
-  jam_id: 1
+nickelback_two:
+  name: MyString (2)
+  start_time: "00:03"
+  end_time: "00:06"
+  jam_id: 42
