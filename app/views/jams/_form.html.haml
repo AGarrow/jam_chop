@@ -32,9 +32,10 @@
         %td.name-field
           = tracks_form.text_field :name
         %td
-          %button.remove-track.glyphicon.glyphicon-remove
+          %button.remove-track.glyphicon.glyphicon-remove.pull-right
 
-  .col-md-12.text-center#add-track
-    %span.glyphicon.glyphicon-plus-sign
-  .actions
-    = f.submit
+  .col-md-6.text-center#add-track
+    %button.btn.form-button
+      Add Track
+  .col-md-6
+    = f.button "Create Album", type: :submit, class: "form-button btn"

@@ -15,7 +15,7 @@
 
 #status-container
 	- if jam.jam_zip_upload.url
-		%a{ href: jam.jam_zip_upload.url }='Download'
+		%a.btn.form-button{ href: jam.jam_zip_upload.url }='Download'
 	- else
 		#status-display{ data: { jam_id: jam.id } }
 			= svg 'loading'
