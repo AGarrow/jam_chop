@@ -45,6 +45,7 @@ group :development, :test do
   gem 'webmock'
   gem 'mocha'
   gem 'simplecov'
+  gem 'simplecov-shield'
 end
 
 group :development do

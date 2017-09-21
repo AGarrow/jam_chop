@@ -1,4 +1,5 @@
-[![CircleCI](https://circleci.com/gh/AGarrow/jam_chop/tree/master.svg?style=shield)](https://circleci.com/gh/AGarrow/jam_chop/tree/master)
+[![build](https://circleci.com/gh/AGarrow/jam_chop/tree/master.svg?style=shield)](https://circleci.com/gh/AGarrow/jam_chop/tree/master)
+[![build](https://s3.amazonaws.com/jam-chop-staging/status.svg)](https://circleci.com/gh/AGarrow/jam_chop/tree/master)
 
 # JamChop
 

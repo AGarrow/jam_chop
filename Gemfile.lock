@@ -87,6 +87,7 @@ GEM
     connection_pool (2.2.1)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
+    docile (1.1.5)
     dotenv (2.2.1)
     erubi (1.6.1)
     erubis (2.7.0)
@@ -109,6 +110,9 @@ GEM
       haml (>= 4.0, < 6)
       nokogiri (>= 1.6.0)
       ruby_parser (~> 3.5)
+    httparty (0.13.7)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.8.6)
     i18n-js (3.0.1)
       i18n (~> 0.6, >= 0.6.6)
@@ -120,6 +124,7 @@ GEM
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
+    json (1.8.6)
     listen (3.1.1)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9.7)
@@ -142,6 +147,7 @@ GEM
     mocha (1.3.0)
       metaclass (~> 0.0.1)
     multi_json (1.12.1)
+    multi_xml (0.6.0)
     nio4r (2.1.0)
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
@@ -212,6 +218,14 @@ GEM
       connection_pool (~> 2.2, >= 2.2.0)
       rack-protection (>= 1.5.0)
       redis (~> 3.3, >= 3.3.3)
+    simplecov (0.8.2)
+      docile (~> 1.1.0)
+      multi_json
+      simplecov-html (~> 0.8.0)
+    simplecov-html (0.8.0)
+    simplecov-shield (0.0.3)
+      httparty (~> 0.13.0)
+      simplecov (~> 0.8.2)
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -283,6 +297,8 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   selenium-webdriver
   sidekiq
+  simplecov
+  simplecov-shield
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3
