@@ -1,8 +1,16 @@
 $(document).ready(function(){
-	$("#add-track").click(function(){
+	$("#add-track").click(function(e){
+		e.preventDefault();
 		var $lastTrack = $("#tracks-table > tbody > :last");
 		var $newRow = $lastTrack.clone().html($lastTrack.html().replace(/\[[0-9]{1,2}\]/g, "["+String($("tr").length)+"]"));
 		$("#tracks-table").append($newRow);
+		$lastTrack = $("#tracks-table > tbody > :last");
+		$lastTrack.find(".time-field > input").each(function(){
+			$(this).val('');
+			$(this).attr('placeholder', '00:00')
+		});
+		$lastTrack.find(".name-field > input ").val('');
+		$lastTrack.find(".name-field > input ").attr('placeholder', 'Track Title')
 		updateTrackNumbers();
 		updateRemoveButton();
 	});
