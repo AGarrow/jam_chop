@@ -4,7 +4,12 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+nickelback: {
+  id: 42,
+  youtube_url: "https://www.youtube.com/watch?v=sIlNIVXpIns",
+  youtube_id: "sIlNIVXpIns",
+  youtube_title: "LOOK AT THIS GRAPH",
+}
 # column: value
 #
 two: {}
