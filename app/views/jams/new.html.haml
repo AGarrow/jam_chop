@@ -1,5 +1,7 @@
-%h1="JAM CHOP"
+- if jam.youtube_url
+	= render 'form', jam: jam if jam.youtube_url
+- else
+	= render 'url_form' unless jam.youtube_url
+	%p
+		Videos that have track lists in their descriptions are easiest to split into albums.
 
-= render 'url_form' unless jam.youtube_url
-
-= render 'form', jam: jam if jam.youtube_url
