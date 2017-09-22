@@ -13,25 +13,22 @@ class JamsController < ApplicationController
       )
     jam.cover_image_remote_url = video.thumbnail_url(size = :medium)
     video.track_suggestions.each { |t| jam.tracks.build(t) }
-    render locals: {
-      jam: jam || Jam.new(youtube_url),
-    }
+    render locals: { jam: jam || Jam.new(youtube_url) }
   end
 
   def create
     jam = Jam.new(jam_params)
     jam.cover_image_remote_url = jam_params[:cover_image_remote_url]
-
-    respond_to do |format|
-      if jam.save
-        ChopJamJob.perform_later(jam)
-        format.html { redirect_to jam }
-        format.json { render :show, status: :created, location: jam }
-      else
-        format.html { render :new }
-        format.json { render json: jam.errors, status: :unprocessable_entity }
-      end
+    if jam.save
+      ChopJamJob.perform_later(jam)
+      redirect_to jam
+    else
+      render :new, locals: { jam: jam }
     end
+  rescue ActiveRecord::RecordNotUnique
+    jam.errors.add(:tracks, :unique)
+    jam.tracks.group_by(&:name).select { |k,v| v.length > 1 }.each_value { |v| v.each { |t| t.errors.add(:name, :unique) } } 
+    render :new, locals: { jam: jam }    
   end
 
   private
