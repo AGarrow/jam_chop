@@ -105,6 +105,6 @@ Rails.application.configure do
   config.active_job.queue_adapter = :sidekiq
 
   Sidekiq.configure_client do |config|  
-    config.redis = { size: 3, url: ENV["REDIS_URL"], namespace: "jam-chop" }
+    config.redis = { size: 3, url: ENV["REDIS_URL"] }
   end
 end
