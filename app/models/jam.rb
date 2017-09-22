@@ -13,7 +13,7 @@ class Jam < ApplicationRecord
 
 	mount_uploader :jam_zip_upload, JamUploader
 
-	scope :to_delete, -> { where("uploaded_at > ?", Time.zone.now - 1).where(upload_deleted_at: nil) }
+	scope :to_delete, -> { where("uploaded_at < ?", Time.zone.now - 1).where(upload_deleted_at: nil) }
 
 	def cover_image_remote_url=(url_value)
 		self.cover_image = URI.parse(url_value)
