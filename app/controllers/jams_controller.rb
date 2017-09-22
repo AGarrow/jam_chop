@@ -11,10 +11,11 @@ class JamsController < ApplicationController
       youtube_id: video.content_id,
       youtube_title: video.title,
       )
+    byebug
     jam.cover_image_remote_url = video.thumbnail_url(size = :medium)
     video.track_suggestions.each { |t| jam.tracks.build(t) }
     render locals: {
-      jam: jam || Jam.new(youtube_url),
+      jam: jam&.decorate || Jam.new(youtube_url).decorate,
     }
   end
 
@@ -28,7 +29,7 @@ class JamsController < ApplicationController
         format.html { redirect_to jam }
         format.json { render :show, status: :created, location: jam }
       else
-        format.html { render :new }
+        format.html { render :new, locals: { jam: jam.decorate } }
         format.json { render json: jam.errors, status: :unprocessable_entity }
       end
     end

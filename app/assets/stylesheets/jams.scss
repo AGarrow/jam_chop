@@ -69,10 +69,11 @@ table {
     to { -webkit-transform: rotate(360deg); }
 }
 
-.add_track {
-	
+.field_with_errors > input {
+		border-color: red;
+		border-style: solid;
+		border-width: 1px;	
 }
-
 .remove-track {
 	background-color: #222;
 	border-color: #222;
@@ -82,4 +83,8 @@ table {
 .form-button {
 	width: 100%;
 	background-color: #9d9d9d;
+}
+
+.alert-danger {
+	background-color: #222;
 }
