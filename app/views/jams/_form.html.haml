@@ -1,7 +1,7 @@
 - if jam.errors.any?
   .alert.alert-danger
     - jam.errors.full_messages.each do |message|
-      %li=message
+      %p=message
 
 = form_with(model: jam, local: true) do |f|
   = f.hidden_field :youtube_url
@@ -13,11 +13,6 @@
       = f.text_field :youtube_title
       = f.text_field :artist, placeholder: 'Artist'
   %hr
-  - if jam.track_errors.any?
-    .alert.alert-danger
-      - jam.track_errors.each do |m|
-        %p=m
-
   %table.table#tracks-table
     = f.fields_for :tracks do |tracks_form|
       %tr

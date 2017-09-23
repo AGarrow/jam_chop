@@ -11,7 +11,6 @@ class JamsController < ApplicationController
       youtube_id: video.content_id,
       youtube_title: video.title,
       )
-    byebug
     jam.cover_image_remote_url = video.thumbnail_url(size = :medium)
     video.track_suggestions.each { |t| jam.tracks.build(t) }
     render locals: {

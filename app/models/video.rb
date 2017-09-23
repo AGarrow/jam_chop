@@ -25,7 +25,7 @@ class Video < Yt::Video
 		end
 
 		def parse_text(text)
-			time_regex = /\[?(\d{1,2}:\d{1,2}(?::\d{1,2})?)\]?/
+			time_regex = /[\[\(]?(\d{1,2}:\d{1,2}(?::\d{1,2})?)[[\]\)]]?/
 			return unless text.scan(time_regex).size > 1
 			tracks = text.split("\n").map { |l| l =~ time_regex ? { start_time: l.match(time_regex).captures.first, name: l.gsub(time_regex, '').strip} : nil }.compact
 			tracks.each_with_index do |t,i|
