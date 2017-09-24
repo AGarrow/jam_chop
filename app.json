@@ -51,13 +51,13 @@
   ],
   "buildpacks": [
     {
-      "url": "heroku/ruby"
-    },
-    {
       "url": "https://github.com/livementor/heroku-buildpack-youtube-dl"
     },
     {
       "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+    },
+    {
+      "url": "heroku/ruby"
     }
   ]
 }
