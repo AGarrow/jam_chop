@@ -45,6 +45,9 @@ function displayStatus(){
 				case 'done':
 					$("#status-display").hide();
 					$("#status-container").html("<a href=\"" + data.download_url + "\"> Download </>")
+				case 'error':
+					$("#status-display > p").text(I18n.t('statuses.'+data.status));
+					$("#loading-svg").hide();
 				default:
 					$("#status-display > p").text(I18n.t('statuses.'+data.status));
 					console.log(data);

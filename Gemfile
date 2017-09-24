@@ -78,5 +78,6 @@ gem 'jquery-rails'
 gem 'i18n-js'
 gem 'ruby-mp3info'
 gem 'draper'
+gem 'sentry-raven'
   
 ruby "2.4.1"

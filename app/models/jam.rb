@@ -3,7 +3,7 @@ class Jam < ApplicationRecord
 	attr_reader :cover_image_remote_url
 	
 
-	enum  status: [ :downloading, :chopping, :compressing, :uploading, :cleaning_up, :done, :deleted, :error ]
+	enum  status: [ :downloading, :chopping, :compressing, :uploading, :cleaning_up, :done, :deleted, :error, :applying_metadata ]
 	enum	audio_format: [ :mp3, :wav ]
 	has_many :tracks
 	accepts_nested_attributes_for :tracks
