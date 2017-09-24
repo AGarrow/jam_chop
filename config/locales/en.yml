@@ -30,6 +30,19 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  activerecord:
+    attributes:
+      jam:
+        youtube_title: Title
+        tracks:
+          one:
+          other:
+    errors:
+      models:
+        jam:
+          attributes:
+            tracks:
+              unique: Track names must be unique
   statuses:
     downloading: "downloading your video to our server..."
     chopping: "chopping audio into byte sized bits (heh)..."
@@ -39,3 +52,4 @@ en:
     cleaning_up: "cleaning up..."
     error: "sorry! something went wrong."
     queued: "your album is queued for processing"
+  

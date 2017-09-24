@@ -1,12 +1,7 @@
 - if jam.errors.any?
-  #error_explanation
-    %h2 
-      "pluralize(jam.errors.count, "error") prohibited this jam from being saved:"
-
-    %ul
-      - jam.errors.full_messages.each do |message|
-        %li=message
-
+  .alert.alert-danger
+    - jam.errors.full_messages.each do |message|
+      %p=message
 
 = form_with(model: jam, local: true) do |f|
   = f.hidden_field :youtube_url
