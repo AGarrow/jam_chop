@@ -40,11 +40,11 @@ h1, h3, h5, p {
 }
 
 .name-field {
-	mind-width: 100px;
+	min-width: 100px;
 }
 
 .name-field > input {
-	width: auto;
+	width: 99%;
 }
 
 input {

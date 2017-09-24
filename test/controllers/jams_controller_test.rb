@@ -29,21 +29,18 @@ class JamsControllerTest < ActionDispatch::IntegrationTest
         "artist": "",
         "tracks_attributes": {
           "0": {
-            "download": "1",
             "track_number": "1",
             "start_time": "00:00",
             "end_time": "04:15",
             "name": "Never Forget Your Token"
           },
           "1": {
-            "download": "1",
             "track_number": "2",
             "start_time": "04:15",
             "end_time": "09:56",
             "name": "Creeps Crouchin"
           },
           "2": {
-            "download": "1",
             "track_number": "3",
             "start_time": "09:56",
             "end_time": "15:08",

@@ -1,5 +1,4 @@
 class Track < ApplicationRecord
-	default_scope { where(download: true) }
 	belongs_to :jam
 	validates_presence_of :jam
 	validates :start_time, :end_time, :name, :track_number, presence: true

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170923214207) do
+ActiveRecord::Schema.define(version: 20170924235321) do
 
   create_table "jams", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(version: 20170923214207) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "track_number"
-    t.boolean "download", default: true
     t.index ["name", "jam_id"], name: "index_tracks_on_name_and_jam_id", unique: true
   end
 

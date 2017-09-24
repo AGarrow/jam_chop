@@ -44,7 +44,7 @@ function displayStatus(){
 			switch(data.status) {
 				case 'done':
 					$("#status-display").hide();
-					$("#status-container").html("<a href=\"" + data.download_url + "\"> Download </>")
+					$("#status-container").html("<a class=\"btn form-button\" href=\"" + data.download_url + "\"> Download </>")
 				case 'error':
 					$("#status-display > p").text(I18n.t('statuses.'+data.status));
 					$("#loading-svg").hide();
@@ -57,8 +57,8 @@ function displayStatus(){
 }
 
 function updateTrackNumbers(){
-	$(".download input:checked").each(function( index ){
-		$(this).parent().siblings(".track-no").find("input").val(String(index + 1))
+	$("tr").each(function( index ){
+		$(this).find(".track-no > input").val(String(index + 1))
 	});
 }
 

@@ -42,12 +42,9 @@ In development environments all converted mp3 albums are stored on the local fil
 ## TODO
 
 ### Necessities
-* write tests and setup CI
-* user input validation
-* exception handling
+* improve test coverage
 
 ### Features
-* clean up frontend
+* email notifications
 * accurate progress bar
 * upload album art
-* email notifications
