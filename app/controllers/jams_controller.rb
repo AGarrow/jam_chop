@@ -5,7 +5,11 @@ class JamsController < ApplicationController
   end
 
   def new
-    render locals: { jam: Jam.new() } and return unless youtube_url 
+    render locals: { jam: Jam.new } and return unless youtube_url
+    unless youtube_url =~ Constants::YOUTUBE_URL_REGEX
+      flash[:alert] = I18n.t("activerecord.errors.models.jam.attributes.youtube_url")
+      render locals: { jam: Jam.new } and return 
+    end
     jam = Jam.new(
       youtube_url: youtube_url,
       youtube_id: video.content_id,

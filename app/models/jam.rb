@@ -12,7 +12,7 @@ class Jam < ApplicationRecord
 
 	scope :to_delete, -> { where("uploaded_at < ?", Time.zone.now - 1).where(upload_deleted_at: nil) }
 
-	validates :youtube_url, format: { with: /(https:)?(\/\/www\.)?youtube\.com\/watch\?v=\S+/, message: 'Please enter a valid youtube url'}
+	validates :youtube_url, format: { with: Constants::YOUTUBE_URL_REGEX }
 	validates :youtube_url, :youtube_id, :youtube_title, presence: true
 	validates_attachment_content_type :cover_image, content_type: /\Aimage\/.*\z/
 	validates_presence_of :tracks
