@@ -34,6 +34,15 @@ en:
     attributes:
       jam:
         youtube_title: Title
+        tracks:
+          one:
+          other:
+    errors:
+      models:
+        jam:
+          attributes:
+            tracks:
+              unique: Track names must be unique
   statuses:
     downloading: "downloading your video to our server..."
     chopping: "chopping audio into byte sized bits (heh)..."
