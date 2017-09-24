@@ -44,6 +44,7 @@ en:
             tracks:
               unique: Track names must be unique
   statuses:
+    applying_metadata: "applying metadata..."
     downloading: "downloading your video to our server..."
     chopping: "chopping audio into byte sized bits (heh)..."
     compressing: "compressing album..."

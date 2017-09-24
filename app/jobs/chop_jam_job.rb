@@ -25,6 +25,9 @@ class ChopJamJob < ActiveJob::Base
 		cleanup(jam)
 		
 		update_status(jam, status: :done)
+	rescue Exception => e
+		update_status(jam, status: :error)
+		Raven.capture_exception(e)
 	end
 
 	private
