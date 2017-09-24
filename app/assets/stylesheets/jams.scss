@@ -6,6 +6,15 @@ body {
 	background-color: #222;
 }
 
+table {
+	background-color: #222;
+	border: none;
+	border-color: #9d9d9d;	
+}
+
+.table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
+	border-top: none;
+}
 
 h1, h3, h5, p { 
 	color: #9d9d9d;
@@ -18,13 +27,27 @@ h1, h3, h5, p {
 .track-no {
 	width: 50px;
 }
+.track-no > input {
+	width: 25px;
+}
 
 .time-field {
 	width: 100px;
 }
 
+.time-field > input {
+	width: 65px;
+}
+
+.name-field {
+	mind-width: 100px;
+}
+
+.name-field > input {
+	width: auto;
+}
+
 input {
-	width: 80%;
 	border: none;
 	border-color: transparent;
 	background-color: #222;
@@ -39,20 +62,19 @@ td {
 	white-space:nowrap;
 }
 
-table {
-	background-color: #222;
-	border: none;
-	border-color: #9d9d9d;	
-}
-
-.table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
-	border-top: none;
-}
-
 .album-meta {
-	overflow: hidden;
+	overflow: scroll;
+	margin-left: 0px;
+	text-align: left;
 }
 
+.album-meta > input {
+	width: 100%;
+}
+
+.cover-image { 
+	margin-bottom: 10px;
+}
 
 .glyphicon.spinning {
     animation: spin 1s infinite linear;
@@ -87,4 +109,12 @@ table {
 
 .alert-danger {
 	background-color: #222;
+}
+
+img {
+	width: 100%;
+}
+
+.table-container {
+	overflow: auto;
 }

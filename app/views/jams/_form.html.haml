@@ -7,27 +7,29 @@
   = f.hidden_field :youtube_url
   = f.hidden_field :youtube_id
   .row
-    = image_tag jam.cover_image_remote_url, class: "pull-left"
+    .col-xs-12.col-md-6.cover-image
+      = image_tag jam.cover_image_remote_url, class: "pull-left"
     = f.hidden_field :cover_image_remote_url
-    .album-meta
+    .col-xs-12.col-md-6.album-meta
       = f.text_field :youtube_title
       = f.text_field :artist, placeholder: 'Artist'
   %hr
-  %table.table#tracks-table
-    = f.fields_for :tracks do |tracks_form|
-      %tr
-        %td.download
-          = tracks_form.check_box :download
-        %td.track-no
-          = tracks_form.text_field :track_number
-        %td.time-field
-          = tracks_form.text_field :start_time
-        %td.time-field
-          = tracks_form.text_field :end_time
-        %td.name-field
-          = tracks_form.text_field :name
-        %td
-          %button.remove-track.glyphicon.glyphicon-remove.pull-right
+  .table-container
+    %table.table#tracks-table
+      = f.fields_for :tracks do |tracks_form|
+        %tr
+          %td.download
+            = tracks_form.check_box :download
+          %td.track-no
+            = tracks_form.text_field :track_number
+          %td.time-field
+            = tracks_form.text_field :start_time
+          %td.time-field
+            = tracks_form.text_field :end_time
+          %td.name-field
+            = tracks_form.text_field :name
+          %td
+            %button.remove-track.glyphicon.glyphicon-remove.pull-right
 
   .col-md-6.text-center
     %button.btn.form-button#add-track
