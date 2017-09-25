@@ -2,8 +2,9 @@
 	%h3="Enter Youtube Video URL"
 	= form_for(:jam_params, url: new_jam_path, method: :get) do |f|
 		.input-group.input-group-lg
-			= f.text_field :content_url, { class: "form-control", placeholder: "e.g.: https://www.youtube.com/watch?v=VlQV2kFXDb8&"}
+			= f.text_field :content_url, { class: "form-control", placeholder: "e.g.: https://www.youtube.com/watch?v=Gn2yttLwYlo" }
 			.input-group-btn
 				= f.button 'Go', type: :submit, class: 'btn btn-success'
 %p
 	=t('info.youtube_track_list')
+%a{ href: new_jam_path(jam_params: { content_url: "https://www.youtube.com/watch?v=Gn2yttLwYlo" }) }=t('info.see_example')

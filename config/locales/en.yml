@@ -56,4 +56,5 @@ en:
     queued: "your album is queued for processing"
   info:
     youtube_track_list: Videos that have track lists in their descriptions are easiest to split into albums.
+    see_example: See Example
   
