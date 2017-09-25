@@ -2,6 +2,9 @@
 	%head
 		= csrf_meta_tags
 		%meta{name: "viewport", content: "width=device-width, initial-scale=1"}
+		%meta{property: "og:title", content: "JamChop"}
+		%meta{property: "og:image", content: image_url("og-img.png")}
+		%meta{property: "og:description", content: "Turn youtube videos into customized mp3 albums with ease."}
 		= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
 		= javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
@@ -13,6 +16,8 @@
 				gtag('js', new Date());
 
 				gtag('config', 'UA-106993436-1');
+		%title
+			JamChop
 
 	%body
 		= render partial: 'shared/header'
