@@ -41,11 +41,15 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'minitest'
   gem 'minitest-spec-rails'
+  gem 'minitest-rails-capybara'
   gem 'vcr'
   gem 'webmock'
   gem 'mocha'
   gem 'simplecov'
   gem 'simplecov-shield'
+  gem 'poltergeist'
+  gem 'launchy'
+  gem 'capybara-screenshot'
 end
 
 group :development do

@@ -44,6 +44,14 @@ en:
             youtube_url: 'Please enter a valid youtube url'
             tracks:
               unique: Track names must be unique
+  components:
+    album:
+      create: Create Album
+      download: Download
+      add_track: Add Track
+  info:
+    youtube_track_list: Videos that have track lists in their descriptions are easiest to split into albums.
+    see_example: See Example
   statuses:
     applying_metadata: "applying metadata..."
     downloading: "downloading your video to our server..."
@@ -54,7 +62,5 @@ en:
     cleaning_up: "cleaning up..."
     error: "sorry! something went wrong."
     queued: "your album is queued for processing"
-  info:
-    youtube_track_list: Videos that have track lists in their descriptions are easiest to split into albums.
-    see_example: See Example
+
   

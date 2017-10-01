@@ -18,5 +18,11 @@ class ChopJamJobTest < ActiveJob::TestCase
 				assert valid_jam.jam_zip_upload_url
 			end
 		end
+
+		it "sets the jams status as error if process fails" do
+			ChopJamJob.any_instance.stubs(:download).raises(Exception.new "something went wrong")
+			ChopJamJob.perform_now(valid_jam)
+			assert_equal "error", valid_jam.status
+		end
 	end
 end

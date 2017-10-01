@@ -30,7 +30,6 @@
             %button.remove-track.glyphicon.glyphicon-remove.pull-right
 
   .col-md-6.text-center
-    %button.btn.form-button#add-track
-      Add Track
+    %button.btn.form-button#add-track=t('components.album.add_track')
   .col-md-6
-    = f.button "Create Album", type: :submit, class: "form-button btn"
+    = f.button t('components.album.create'), type: :submit, class: "form-button btn"
