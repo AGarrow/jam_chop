@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170924235321) do
+ActiveRecord::Schema.define(version: 20171001190514) do
 
   create_table "jams", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20170924235321) do
     t.datetime "upload_deleted_at"
     t.integer "status"
     t.integer "audio_format", default: 0
+    t.integer "user_id"
   end
 
   create_table "tracks", force: :cascade do |t|
@@ -39,6 +40,12 @@ ActiveRecord::Schema.define(version: 20170924235321) do
     t.datetime "updated_at", null: false
     t.integer "track_number"
     t.index ["name", "jam_id"], name: "index_tracks_on_name_and_jam_id", unique: true
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

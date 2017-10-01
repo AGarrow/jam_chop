@@ -2,11 +2,11 @@ class Jam < ApplicationRecord
 	has_attached_file :cover_image, styles: { default: "600x600", thumb: "100x100" }, default_url: "/images/:style/missing.png"
 	attr_reader :cover_image_remote_url
 	
-
 	enum  status: [ :downloading, :chopping, :compressing, :uploading, :cleaning_up, :done, :deleted, :error, :applying_metadata ]
 	enum	audio_format: [ :mp3, :wav ]
 	has_many :tracks
 	accepts_nested_attributes_for :tracks
+	belongs_to :user
 
 	mount_uploader :jam_zip_upload, JamUploader
 

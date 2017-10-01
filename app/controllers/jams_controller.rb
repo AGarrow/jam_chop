@@ -42,7 +42,11 @@ class JamsController < ApplicationController
     end
 
     def jam_params
-      params.require(:jam).permit(:cover_image_remote_url, :youtube_url, :youtube_title, :youtube_id, tracks_attributes: [:track_number, :start_time, :name, :end_time])
+      params.require(:jam).permit(:artist, :cover_image_remote_url, :youtube_url, :youtube_title, :youtube_id, tracks_attributes: [:track_number, :start_time, :name, :end_time])
+    end
+
+    def user_params
+      params.require(:user).permit(:email)
     end
 
     def youtube_url
