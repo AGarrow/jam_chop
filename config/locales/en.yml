@@ -62,5 +62,8 @@ en:
     cleaning_up: "cleaning up..."
     error: "sorry! something went wrong."
     queued: "your album is queued for processing"
+  email:
+    sent: An email will be sent to %{email} when this download is complete.
+    suggest: This process can take a while, enter your email address to receive a notification when your download is ready.
 
   

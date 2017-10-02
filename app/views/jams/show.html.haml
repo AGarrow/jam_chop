@@ -21,3 +21,15 @@
 		#status-display{ data: { jam_id: jam.id } }
 			#loading-svg=svg 'loading'
 			%p=I18n.t("statuses.#{jam.status.presence || 'queued'}")
+#user-info
+	#user-notice
+		-if jam.user
+			.alert.alert-success
+				= t('email.sent', email: jam.user.email)
+	#email-form-containter{ style: "display:#{jam.user ? 'none' : ''}" }			
+		= form_for(jam, remote: true, html: { id: "email-form" }, format: :json ) do |f|
+			= f.fields_for :user do |u|
+				.input-group
+					= u.text_field(:email, class: "form-control")
+					.input-group-btn
+						= u.button 'Go', type: :submit, class: 'btn btn-success', id: "user-email"

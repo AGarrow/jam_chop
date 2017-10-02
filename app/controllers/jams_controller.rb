@@ -35,6 +35,18 @@ class JamsController < ApplicationController
     render :new, locals: { jam: jam }    
   end
 
+  def update
+    user = User.find_or_create_by(email: user_params[:email])
+    jam.user = user
+    respond_to do |format|
+      if jam.save
+        format.json { render json: { message: I18n.t('email.sent', email: user.email) } }
+      else
+        format.json { head :unprocessible_entity }
+      end
+    end
+  end
+
   private
 
     def jam
@@ -46,7 +58,7 @@ class JamsController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:email)
+      params.require(:jam).permit(user: [:email])&.[](:user)
     end
 
     def youtube_url

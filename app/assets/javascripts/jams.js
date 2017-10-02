@@ -26,6 +26,11 @@ $(document).ready(function(){
 	if ($("#status-display").length > 0) {
 		displayStatus()
 	}
+
+	$("#email-form").on("ajax:success", function(e, data, status, xhr){
+		$("#email-form-container").hide();
+		$("#user-notice").html("<div class='alert alert-success'>"+data['message']+"</div>");	
+	});
 });
 
 function displayStatus(){
