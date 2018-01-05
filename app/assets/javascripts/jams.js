@@ -16,6 +16,7 @@ $(document).ready(function(){
 	});
 
 	$("button.remove-track").click(function(e){
+		console.log("delete");
 		e.preventDefault();
 		$(this).closest("tr").remove();
 		updateTrackNumbers();
